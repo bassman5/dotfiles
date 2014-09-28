@@ -52,6 +52,9 @@
 	# Example: to find when the line "constraint=someMethod," was commented out, use:
 	# git search '#constraint=someMethod,'
 	search = "!f() { git log -S$1 --pretty=oneline --abbrev-commit; }; f"
+	
+	# Run this from a branch and it'll only reset your local branch to the upstream version.
+	forcepull = !"git fetch ; git reset --hard @{u}"
 
 [core]
 	excludesfile = ~/.gitignore
